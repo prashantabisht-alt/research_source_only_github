@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+*.o
+*.mod
+*.out
+*.pyc
+__pycache__/
+a.out
+abp_traj
+run
