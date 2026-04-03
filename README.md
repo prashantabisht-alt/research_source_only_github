@@ -24,6 +24,7 @@ These are the best folders to use first.
 | `ABP in 2D` | canonical | active Brownian particle results in 2D |
 | `jerky particle` | canonical | jerky active particle / AOUP work |
 | `RTP` | canonical | run-and-tumble particle work |
+| `TCRW` | canonical | topological chiral random walker Python branch |
 
 ## Secondary Or Archive Folders
 
@@ -80,3 +81,4 @@ bash run.sh --help
 - This is the best repo to share with Claude, Codex, or collaborators when you want code only.
 - The full local workspace still contains the report, generated data, and additional archive material.
 - If your main DP2 direction is jerky active particles, start with `jerky particle`, then use `chapter1` for Brownian / Langevin reference points.
+- If you want the newer lattice-based chiral walker branch, start with `TCRW`.

@@ -37,3 +37,10 @@ This file records representative source -> plot chains for the main code branche
 | --- | --- | --- | --- |
 | Fig. 1 Monte Carlo | `RTP/rtp_fig1.f90` | `RTP/rtp_fig1_Dpoint03.gnu`, `RTP/rtp_fig1_Dpoint1.gnu`, `RTP/rtp_fig1_Dpoint2.gnu` | Simulation branch |
 | Fig. 1 theory overlay | `RTP/rtp_fig1_theory.py` | same gnuplot files | Theory and MC share the same plotting scripts |
+
+## TCRW
+
+| Topic | Source | Plot/output layer | Notes |
+| --- | --- | --- | --- |
+| Core simulation engine | `TCRW/tcrw_core.py` | consumed by phase scripts | Vectorized PBC and OBC simulator plus diffusion-measurement helper |
+| Phase 1 PBC reproduction of Fig. 1 | `TCRW/tcrw_phase1_pbc.py` | writes `tcrw_fig1b_trajectories.png`, `tcrw_fig1c_MSD.png`, `tcrw_fig1d_D_vs_omega.png` when run locally | Python branch based on the TCRW paper workflow |
