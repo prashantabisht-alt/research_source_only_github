@@ -1,0 +1,33 @@
+name: Basilisk bootstrap artifact
+
+on:
+  push:
+    branches:
+      - basilisk-bootstrap-20260808
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download ref-locked Linux source bundle
+        shell: bash
+        run: |
+          set -euxo pipefail
+          curl --fail --location --retry 5 \
+            https://github.com/comphy-lab/basilisk-C/releases/download/v2026-07-20/basilisk-linux.tar.gz \
+            --output basilisk-linux-v2026-07-20.tar.gz
+          echo '4686294e8f649a424ca437a7fa94bfac9984c32bea5e9f33a27a5783cc692829  basilisk-linux-v2026-07-20.tar.gz' | sha256sum --check -
+          tar -tzf basilisk-linux-v2026-07-20.tar.gz | head -n 20
+
+      - name: Upload source archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: basilisk-linux-v2026-07-20
+          path: basilisk-linux-v2026-07-20.tar.gz
+          if-no-files-found: error
+          retention-days: 1
