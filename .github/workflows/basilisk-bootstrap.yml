@@ -22,7 +22,8 @@ jobs:
             https://github.com/comphy-lab/basilisk-C/releases/download/v2026-07-20/basilisk-linux.tar.gz \
             --output basilisk-linux-v2026-07-20.tar.gz
           echo '4686294e8f649a424ca437a7fa94bfac9984c32bea5e9f33a27a5783cc692829  basilisk-linux-v2026-07-20.tar.gz' | sha256sum --check -
-          tar -tzf basilisk-linux-v2026-07-20.tar.gz | head -n 20
+          tar -tzf basilisk-linux-v2026-07-20.tar.gz > archive-listing.txt
+          sed -n '1,20p' archive-listing.txt
 
       - name: Upload source archive
         uses: actions/upload-artifact@v4
